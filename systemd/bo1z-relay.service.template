@@ -1,0 +1,8 @@
+# Rendered by scripts/install-systemd.sh (fills @REPO@, @WORK@, @CERTS@, @RELAY_PORT@).
+[Unit]
+Description=BO1 Zombies co-op relay (local workerd)
+[Service]
+WorkingDirectory=@WORK@/relay
+ExecStart=@WORK@/relay/node_modules/.bin/wrangler dev --port @RELAY_PORT@ --ip 0.0.0.0 --local --local-protocol https --https-key-path @CERTS@/key.pem --https-cert-path @CERTS@/cert.pem --show-interactive-dev-session=false
+Environment=WRANGLER_SEND_METRICS=false CI=1
+Restart=on-failure

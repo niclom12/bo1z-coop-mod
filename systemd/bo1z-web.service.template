@@ -1,0 +1,7 @@
+# Rendered by scripts/install-systemd.sh (fills @REPO@, @WEB@, @CERTS@, @PORT@, @HTTP_PORT@).
+[Unit]
+Description=BO1 Zombies web build (self-hosted static server, COOP/COEP)
+[Service]
+WorkingDirectory=@REPO@
+ExecStart=/usr/bin/env node @REPO@/tools/bo1z-serve.mjs --root @WEB@ --host 0.0.0.0 --port @PORT@ --http-port @HTTP_PORT@ --path /bo1z/ --quiet --cert @CERTS@/cert.pem --key @CERTS@/key.pem
+Restart=on-failure

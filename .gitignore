@@ -1,0 +1,31 @@
+# Game data and anything derived from it: never commit these
+web/
+work/
+build/
+certs/
+tmp/
+*.pem
+*.key
+*.ff
+*.iwd
+*.iwi
+*.kop
+*.pack
+*.raw
+manifest.json
+.bo1z-backup/
+
+# Inputs and outputs of the face/voice tools (personal photos, generated images, raw takes)
+avatar/
+avatar-out/
+clips/
+takes/
+*.pcm
+reference.*
+
+# Python / node / editors
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+.env

@@ -1,0 +1,30 @@
+--- a/manifest.json
++++ b/manifest.json
+@@ -1,6 +1,6 @@
+ {
+   "manifest_version": 3,
+-  "name": "BO1 Zombies Co-op: 4 players for vel.gg",
++  "name": "BO1 Zombies Co-op: 4 players for vel.gg (local self-host build)",
+   "short_name": "BO1 Zombies Co-op",
+   "version": "2.1.1",
+   "description": "Play Black Ops 1 Zombies in the browser (vel.gg) with up to 4 players online: host a game, send the link, play together. Controller support included.",
+@@ -14,7 +14,10 @@
+   "content_scripts": [
+     {
+       "matches": [
+-        "https://vel.gg/*"
++        "https://vel.gg/*",
++        "http://127.0.0.1:@HTTP_PORT@/*",
++        "http://localhost:@HTTP_PORT@/*",
++        "https://@LAN_IP@:@PORT@/*"
+       ],
+       "js": [
+         "coop.js"
+@@ -23,5 +26,6 @@
+       "world": "MAIN",
+       "all_frames": false
+     }
+-  ]
++  ],
++  "version_name": "2.1.1-local"
+ }

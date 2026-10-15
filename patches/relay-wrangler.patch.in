@@ -1,0 +1,10 @@
+--- a/wrangler.jsonc
++++ b/wrangler.jsonc
+@@ -17,6 +17,6 @@
+   "observability": { "enabled": true },
+   "vars": {
+     // Pages allowed to open rooms (requests without an Origin header, such as tests, are accepted too).
+-    "ALLOWED_ORIGINS": "https://vel.gg"
++    "ALLOWED_ORIGINS": "https://vel.gg,http://127.0.0.1:@HTTP_PORT@,http://localhost:@HTTP_PORT@,https://@LAN_IP@:@PORT@"
+   }
+ }
